@@ -1,7 +1,7 @@
 # E-commerce Data Analysis
 Project Overview
 
-This project focuses on analyzing customer and order data using SQL. The database contains two relational tables: customers and orders with 100+ records. The project demonstrates real-world SQL operations used in business reporting and data analysis.
+This project focuses on analyzing customer and order data using SQL. The database contains two relational tables: customers and orders with 30+ records. The project demonstrates real-world SQL operations used in business reporting and data analysis.
 
 The main objective of this project is to analyze:
 
