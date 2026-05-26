@@ -1,0 +1,80 @@
+create database e_commerce;
+use e_commerce;
+
+create table customers (customer_id int primary key, customer_name varchar(50), city varchar(50), gender varchar(10),age int,sigup_date date);
+
+create table orders (order_id int primary key, customer_id int, order_date date,product_name varchar(50),category varchar(50),amount decimal(10,2),foreign key (customer_id)references customers(customer_id));
+
+
+insert into customers values
+(1,'Rahul','Hyderabad','Male',24,'2023-01-10'),
+(2,'Sneha','Chennai','Female',28,'2023-01-15'),
+(3,'Arjun','Bangalore','Male',31,'2023-02-01'),
+(4,'Divya','Mumbai','Female',26,'2023-02-18'),
+(5,'Kiran','Delhi','Male',35,'2023-03-05'),
+(6,'Pooja','Pune','Female',27,'2023-03-20'),
+(7,'Ravi','Kolkata','Male',29,'2023-04-01'),
+(8,'Anjali','Hyderabad','Female',22,'2023-04-10'),
+(9,'Vikas','Chennai','Male',33,'2023-04-25'),
+(10,'Meena','Delhi','Female',30,'2023-05-01');
+
+insert into customers values
+(11,'Akhil','Hyderabad','Male',25,'2023-05-10'),
+(12,'Nisha','Pune','Female',29,'2023-05-15'),
+(13,'Suresh','Delhi','Male',32,'2023-05-20'),
+(14,'Kavya','Mumbai','Female',23,'2023-05-25'),
+(15,'Manoj','Bangalore','Male',27,'2023-06-01'),
+(16,'Priya','Chennai','Female',31,'2023-06-05'),
+(17,'Teja','Kolkata','Male',26,'2023-06-10'),
+(18,'Deepika','Hyderabad','Female',28,'2023-06-15'),
+(19,'Harish','Pune','Male',34,'2023-06-20'),
+(20,'Swathi','Delhi','Female',24,'2023-06-25'),
+
+(21,'Rohit','Mumbai','Male',30,'2023-07-01'),
+(22,'Lavanya','Bangalore','Female',27,'2023-07-05'),
+(23,'Karthik','Chennai','Male',29,'2023-07-10'),
+(24,'Neha','Hyderabad','Female',22,'2023-07-15'),
+(25,'Vamshi','Kolkata','Male',33,'2023-07-20'),
+(26,'Ayesha','Pune','Female',26,'2023-07-25'),
+(27,'Tarun','Delhi','Male',31,'2023-08-01'),
+(28,'Sanjana','Mumbai','Female',25,'2023-08-05'),
+(29,'Naveen','Bangalore','Male',28,'2023-08-10'),
+(30,'Keerthi','Chennai','Female',30,'2023-08-15');
+
+select * from customers;
+
+insert into orders values
+(101,1,'2024-01-01','Laptop','Electronics',55000),
+(102,2,'2024-01-02','Mobile','Electronics',22000),
+(103,3,'2024-01-03','Shoes','Fashion',3000),
+(104,4,'2024-01-04','Watch','Accessories',4500),
+(105,5,'2024-01-05','Tablet','Electronics',18000),
+(106,6,'2024-01-06','Bag','Fashion',2500),
+(107,7,'2024-01-07','Headphones','Electronics',3500),
+(108,8,'2024-01-08','Tshirt','Fashion',1200),
+(109,9,'2024-01-09','Camera','Electronics',42000),
+(110,10,'2024-01-10','Shoes','Fashion',2800),
+
+(111,1,'2024-01-11','Mobile','Electronics',25000),
+(112,2,'2024-01-12','Laptop','Electronics',62000),
+(113,3,'2024-01-13','Watch','Accessories',5000),
+(114,4,'2024-01-14','Bag','Fashion',2000),
+(115,5,'2024-01-15','Mobile','Electronics',21000),
+(116,6,'2024-01-16','Shoes','Fashion',3500),
+(117,7,'2024-01-17','Tablet','Electronics',17000),
+(118,8,'2024-01-18','Camera','Electronics',38000),
+(119,9,'2024-01-19','Tshirt','Fashion',1500),
+(120,10,'2024-01-20','Headphones','Electronics',4000),
+
+(121,1,'2024-01-21','Watch','Accessories',4800),
+(122,2,'2024-01-22','Shoes','Fashion',3200),
+(123,3,'2024-01-23','Laptop','Electronics',70000),
+(124,4,'2024-01-24','Camera','Electronics',46000),
+(125,5,'2024-01-25','Bag','Fashion',2400),
+(126,6,'2024-01-26','Tshirt','Fashion',1100),
+(127,7,'2024-01-27','Mobile','Electronics',26000),
+(128,8,'2024-01-28','Tablet','Electronics',19000),
+(129,9,'2024-01-29','Watch','Accessories',5300),
+(130,10,'2024-01-30','Shoes','Fashion',3100);
+
+select * from orders;
