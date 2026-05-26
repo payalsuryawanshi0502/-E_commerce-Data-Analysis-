@@ -1,0 +1,119 @@
+Final Report
+Customer & Orders Data Analysis using SQL
+Project Overview
+
+This project analyzes customer and order data using SQL. The database contains two tables: customers and orders with 100+ records. The objective of this project is to understand customer purchasing behavior, product performance, and overall sales trends using SQL queries.
+
+Dataset Information
+Customers Table
+
+Contains customer-related information:
+
+customer_id
+customer_name
+city
+gender
+age
+signup_date
+Orders Table
+
+Contains order-related information:
+
+order_id
+customer_id
+order_date
+product_name
+category
+amount
+SQL Concepts Used
+Aggregate Functions
+
+Used:
+
+SUM()
+AVG()
+COUNT()
+MIN()
+MAX()
+
+Purpose:
+
+Calculate revenue
+Find average order value
+Count customers and orders
+Joins Used
+INNER JOIN
+
+Used to combine matching customer and order records.
+
+LEFT JOIN
+
+Used to find customers without orders.
+
+RIGHT JOIN
+
+Used to identify orders without customer details.
+
+FULL OUTER JOIN
+
+Used to display all customers and all orders together.
+
+Window Functions Used
+RANK()
+
+Ranks customers based on total spending.
+
+DENSE_RANK()
+
+Provides ranking without gaps.
+
+ROW_NUMBER()
+
+Assigns unique row numbers to customer orders.
+
+Running Total
+
+Tracks cumulative sales over time.
+
+UNION Operations
+
+Used UNION and UNION ALL to:
+
+Combine multiple result sets
+Compare different product categories
+Analyze customer groups and sales data
+Exploratory Data Analysis (EDA)
+
+Performed analysis on:
+
+Total revenue
+Monthly sales
+Category-wise sales
+City-wise customer distribution
+Top-selling products
+Customer spending patterns
+Key Insights
+Electronics category generated the highest revenue.
+Laptop and Mobile products were top-selling items.
+Customers from Hyderabad, Chennai, and Bangalore placed more orders.
+Repeat customers contributed significantly to total sales.
+High-value orders increased overall business revenue.
+Business Outcome
+
+This project helps businesses:
+
+Understand customer behavior
+Identify profitable products
+Track sales performance
+Improve marketing strategies
+Support data-driven decision making
+Tools Used
+MySQL
+SQL Queries
+Skills Demonstrated
+SQL Query Writing
+Data Cleaning
+Data Analysis
+Joins & Relationships
+Window Functions
+Reporting & Insights Generation
