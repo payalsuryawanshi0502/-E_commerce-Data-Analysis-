@@ -1,0 +1,65 @@
+#total coustomers
+select count(*) as total_customers from customers;
+# total orders 
+select count(*) as total_orders from orders;
+#total sales revenue
+select sum(amount) as total_revenue from orders;
+select avg(amount) as avg_amount from orders;
+select min(amount) as minimum_amount from orders;
+select max(amount) as maximum_amount from orders;
+
+#group by
+select category ,sum(amount)
+ as total_amount from orders
+ group by 
+ category;
+select city, count(customer_id) as total_customers 
+from customers group by 1;
+select customer_id, sum(amount) as total_spending from orders
+group by customer_id order by total_spending desc;
+select category, avg(amount) as total_spending from orders 
+group by category ;
+ 
+#join(customers and orders)
+select c.customer_name, c.city, o.product_name, o.category, o.amount from customers c
+inner join orders o on c.customer_id = o.customer_id;
+select c.customer_id, c.customer_name, c.city, o.order_id, o.product_name, o.category, o.amount from customers c
+left join orders o on c.customer_id = o.customer_id;
+select c.customer_id, c.customer_name, c.city, o.order_id, o.product_name, o.category, o.amount from customers c
+right join orders o on c.customer_id = o.customer_id;
+
+#union
+select customer_name as names from customers
+union
+select product_name from orders;
+select city as details from customers
+union all
+select category from orders;
+
+ # Window function
+ select customer_id, sum(amount) as total_spending,
+rank() over(order by sum(amount) desc) as spending_rank from orders group by customer_id;
+select customer_id, sum(amount) as total_spending,
+dense_rank() over(order by sum(amount) desc) as dense_rank_number from orders group by 1;
+
+
+# monthly wise revenue
+select
+month(order_date) as month_number,
+sum(amount) as monthly_revenue
+from orders
+group by month(order_date)
+order by month_number;
+# Limit
+select city, count(*) as customer_count from customers
+group by city order by customer_count desc limit 1;
+select city, count(*) as customer_count from customers
+group by city order by customer_count desc limit 5;
+
+# highest revenue product using group by
+select product_name, sum(amount) as total_sales from orders 
+group by product_name order by total_sales desc limit 5;
+
+# Top 5 selling  products based on revenue 
+select product_name, category, sum(amount) as total_sales, count(order_id) as total_orders from orders
+group by product_name, category order by sum(amount) desc limit 5;
